@@ -29,6 +29,18 @@ Event.prototype.availabilities = function (fromDate, toDate) {
             AddBusyEvents(element, Date.parse(fromDate), Date.parse(toDate), start_busy, end_busy);
         };
     });
+    //  available windows = free windows - busy windows
+    let availabilities = FreeEvents.filter(element => !BusyEvents.includes(element));
+
+    //print availabilities
+    if (FreeEvents.length == 0) {
+        console.log('I\'m not available at all.');
+    } else {
+        FreeEvents.forEach(function (slot) {
+            console.log('I\'m available the ' + slot);
+        });
+        console.log('I\'m not available any other time !');
+    }
 };
 
 function AddFreeEvents(element, fromDate, toDate, start_open, end_open) {
