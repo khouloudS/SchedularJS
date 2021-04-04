@@ -19,7 +19,7 @@ node main.js
 ### Solution breakdown
 The main idea of the solution is to locate all the open windows between the specified time boundaries and then remove the busy events during that periode of time to end up with the actual remaining free windows for possible intervention.
 
-1. Adding free windows
+##### 1. Adding free windows
 
 In order to be taken into consideration, a free window should satisfy two criterias:
 * Opening field of the event should be True.
@@ -34,7 +34,7 @@ The second criteria is checked by **AddFreeEvents()** function call.
 * Focusing only on opening events within the desired time (event start time should be lower than the end of desired window)
 * Recurring opening events are checked by a recursive call.
 
-2. Adding busy windows
+##### 2. Adding busy windows
 In order to be taken into consideration, a busy window should satisfy two criterias:
 * Opening field of the event should be False.
 * Should be within the specified time.
@@ -48,7 +48,7 @@ The second criteria is checked by **AddBusyEvents()** function call.
 * Focusing only on busy events within the desired time (event start time should be lower than the end of desired window)
 * Recurring busy events are checked by a recursive call.
 
-3. Filtering out busy windows:
+##### 3. Filtering out busy windows:
 
 The final free windows should satisfy the following criteria:
 * A free window should not be in busy intervals.
@@ -57,7 +57,7 @@ Available slots: **avaliablities[] = FreeWindows[] - BusyWindows[]**
 
 
 
-4. Printing available windows:
+##### 4. Printing available windows:
 
 The computed free time slots are printed to the console using the required format.
 
