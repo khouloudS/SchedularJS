@@ -33,10 +33,10 @@ Event.prototype.availabilities = function (fromDate, toDate) {
     let availabilities = FreeEvents.filter(element => !BusyEvents.includes(element));
 
     //print availabilities
-    if (FreeEvents.length == 0) {
+    if (availabilities.length == 0) {
         console.log('I\'m not available at all.');
     } else {
-        FreeEvents.forEach(function (slot) {
+        availabilities.forEach(function (slot) {
             console.log('I\'m available the ' + slot);
         });
         console.log('I\'m not available any other time !');
